@@ -30,7 +30,6 @@ var strategy = new JwtStrategy(jwtOptions, function (jwt_payload, next) {
     if (jwt_payload) {
         next(null, { _id: jwt_payload._id, 
             userName: jwt_payload.userName 
-            // fullName: jwt_payload.fullName, 
             // role: jwt_payload.role 
         }); 
     } else {
@@ -56,7 +55,6 @@ app.post("/api/user/login", (req,res)=>{
         let tokenPayload = {
             _id: user._id,
             userName: user.userName
-            // fullName: user.fullName,
             // role: user.role
         }
 
