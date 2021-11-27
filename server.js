@@ -40,7 +40,6 @@ var strategy = new JwtStrategy(jwtOptions, function (jwt_payload, next) {
 passport.use(strategy);
 app.use(passport.initialize());
 
-
 /* TODO Add Your Routes Here */
 app.post("/api/user/register", (req,res)=>{
     userService.registerUser(req.body).then(msg=>{
